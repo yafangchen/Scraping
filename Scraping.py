@@ -16,13 +16,11 @@ def url2file(url, filename):
         IOError: An error occurred accessing file.
         HTTPError: An error occurred accessing url.
     """
-    pass
-
-if __name__ == '__main__':
-    file="downloaded_file.html"
-    url="http://python.org/"
     response=urllib2.urlopen(url)
-    fh=open(file,'w')
+    fh=open(filename,'w')
     fh.write(response.read())
     fh.close()
 
+
+if __name__ == '__main__':
+    url2file("http://python.org/","downloaded_file.html")
